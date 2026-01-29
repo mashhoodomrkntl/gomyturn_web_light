@@ -14,17 +14,25 @@ export default function Footer() {
                             <span className="text-xl font-bold text-white tracking-tight">GoMyTurn</span>
                         </Link>
                         <p className="not-italic leading-relaxed text-sm">
-                            Take your turn, the smarter way. Your trusted platform for service booking.
+                            Take your turn, the smarter way. Smarter turn-taking for everyday services.
                         </p>
+                        <div className="text-sm space-y-2">
+                            <p>Email: sofbudgroup@gmail.com</p>
+                            <p>WhatsApp: +91 9453 45XXXX</p>
+                        </div>
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-white mb-6">Product</h4>
+                        <h4 className="font-bold text-white mb-6">Company</h4>
                         <ul className="space-y-4 text-sm">
-                            {['Features', 'How It Works', 'Services'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="hover:text-[var(--color-primary)] transition-colors">
-                                        {item}
+                            {[
+                                { name: 'Home', href: '/' },
+                                { name: 'About', href: '/about' },
+                                { name: 'Services', href: '/services' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-[var(--color-primary)] transition-colors">
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -32,12 +40,16 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-white mb-6">Company</h4>
+                        <h4 className="font-bold text-white mb-6">Support</h4>
                         <ul className="space-y-4 text-sm">
-                            {['About Us', 'Contact', 'Careers'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="hover:text-[var(--color-primary)] transition-colors">
-                                        {item}
+                            {[
+                                { name: 'Help', href: '/help' },
+                                { name: 'Customer Support', href: '/customer-support' },
+                                { name: 'Get a Demo', href: '/get-demo' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-[var(--color-primary)] transition-colors">
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -59,7 +71,7 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                    <p>© 2024 GoMyTurn. All rights reserved.</p>
+                    <p>© 2026 GoMyTurn. All rights reserved.</p>
                     <p className="flex items-center gap-1">
                         Made with <Heart size={14} className="text-pink-500 fill-pink-500" /> by Sofbud Group
                     </p>

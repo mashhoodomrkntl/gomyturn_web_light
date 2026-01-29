@@ -5,31 +5,31 @@ import { Stethoscope, Scissors, Car, Building2, ArrowRight } from 'lucide-react'
 
 const categories = [
     {
-        icon: Stethoscope,
-        title: "Healthcare",
-        description: "Doctors, clinics, hospitals",
-        count: "500+ providers",
+        icon: Building2,
+        title: "Gynecology",
+        description: "Expert care for women's health.",
+        count: "120+ providers",
         gradient: "from-red-500 to-pink-500"
     },
     {
-        icon: Scissors,
-        title: "Beauty & Salon",
-        description: "Hair salons, spas, beauticians",
-        count: "350+ providers",
+        icon: Stethoscope,
+        title: "Neurology",
+        description: "Advanced neurological treatments.",
+        count: "80+ providers",
         gradient: "from-purple-500 to-indigo-500"
     },
     {
         icon: Car,
-        title: "Auto Services",
-        description: "Car service, repair, wash",
-        count: "200+ providers",
+        title: "Car Wash",
+        description: "Premium cleaning & detailing.",
+        count: "250+ providers",
         gradient: "from-blue-500 to-cyan-500"
     },
     {
-        icon: Building2,
-        title: "Consultants",
-        description: "Legal, finance, business",
-        count: "150+ providers",
+        icon: Scissors,
+        title: "Beauty & Spa",
+        description: "Relaxing treatments & styling.",
+        count: "300+ providers",
         gradient: "from-emerald-500 to-teal-500"
     }
 ];

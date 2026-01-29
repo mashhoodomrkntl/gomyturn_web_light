@@ -6,23 +6,23 @@ import { Calendar, Bell, Users, ShieldCheck } from 'lucide-react';
 const values = [
     {
         icon: Calendar,
-        title: "Book Ahead",
-        description: "Reserve your spot in advance. Know exactly when to arrive without standing in queues."
+        title: "Your turn, without the wait",
+        description: "Get a specific time. Show up then. Not a minute sooner."
     },
     {
         icon: Bell,
-        title: "Real-time Updates",
-        description: "Get instant notifications as your turn approaches. Never miss your slot."
+        title: "Time saved. Stress removed",
+        description: "Knowing your number means you can relax until it's time."
     },
     {
         icon: Users,
-        title: "Smart Queue Management",
-        description: "Service providers can manage bookings efficiently with our intelligent system."
+        title: "Skip the wait, not your turn",
+        description: "Keep your place in line while you do life."
     },
     {
         icon: ShieldCheck,
-        title: "Verified Services",
-        description: "All service providers are verified. Book with confidence every time."
+        title: "Because your turn matters",
+        description: "We believe your time is as valuable as the service."
     }
 ];
 
@@ -46,8 +46,8 @@ export default function ValueProp() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6"
                     >
-                        Smarter queues for <br />
-                        <span className="text-[var(--color-primary)]">modern businesses</span>
+                        Your time <br />
+                        <span className="text-[var(--color-primary)]">deserves better</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function ValueProp() {
                         transition={{ delay: 0.2 }}
                         className="text-gray-600 text-base md:text-lg leading-relaxed"
                     >
-                        Turn management, reimagined. Everything you need to save time and serve better.
+                        Waiting steals time. Uncertainty creates stress. Crowded queues waste energy. GoMyTurn fixes that.
                     </motion.p>
                 </div>
 

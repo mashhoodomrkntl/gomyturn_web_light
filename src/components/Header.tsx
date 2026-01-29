@@ -15,10 +15,11 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
-                    <Link href="#features" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Features</Link>
-                    <Link href="#how-it-works" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">How It Works</Link>
-                    <Link href="#services" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Services</Link>
-                    <Link href="#contact" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Contact</Link>
+                    <Link href="/" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Home</Link>
+                    <Link href="/about" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">About</Link>
+                    <Link href="/services" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Services</Link>
+                    <Link href="/get-demo" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Get a Demo</Link>
+                    <Link href="/help" className="text-gray-600 hover:text-[var(--color-primary)] font-medium transition-colors">Help</Link>
                 </nav>
 
                 {/* Auth Buttons */}

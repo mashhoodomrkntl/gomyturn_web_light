@@ -8,28 +8,28 @@ const steps = [
         number: "01",
         icon: Search,
         title: "Search Services",
-        description: "Find doctors, salons, car services, consultants and more near you.",
+        description: "Find verified local service providers in your area.",
         color: "from-blue-500 to-cyan-500"
     },
     {
         number: "02",
         icon: CalendarDays,
-        title: "Pick Your Slot",
-        description: "Choose a convenient time and get your token number instantly.",
+        title: "Choose Your Slot",
+        description: "Pick a date and time that fits your day perfectly.",
         color: "from-emerald-500 to-teal-500"
     },
     {
         number: "03",
         icon: BellRing,
-        title: "Get Notified",
-        description: "Receive real-time updates as your turn approaches.",
+        title: "Get Your Turn",
+        description: "Know your token number and estimated arrival time instantly.",
         color: "from-amber-500 to-orange-500"
     },
     {
         number: "04",
         icon: Sparkles,
-        title: "Arrive & Get Served",
-        description: "Walk in right on time. No waiting, no hassle.",
+        title: "Arrive On Time",
+        description: "Skip the lines. Get served smoothly right when it's your turn.",
         color: "from-purple-500 to-pink-500"
     }
 ];

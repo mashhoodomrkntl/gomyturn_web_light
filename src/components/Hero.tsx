@@ -25,12 +25,12 @@ export default function Hero() {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-gray-900">
-                            Your Time <br />
-                            <span className="text-[var(--color-primary)]">Deserves Better</span>
+                            Smarter Turn-taking <br />
+                            <span className="text-[var(--color-primary)]">on time, every time</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                            Turn-taking, simplified. Book services ahead, skip the wait, and arrive right on your turn. Your time matters to us.
+                            Smarter turn-taking for everyday services. Book ahead, get your turn number, and arrive exactly when it matters. No lines. No crowding. Just turns — on time.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -39,7 +39,7 @@ export default function Hero() {
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-8 py-3.5 rounded-full font-bold text-base transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2"
                             >
-                                Book Now
+                                Book Your Turn
                                 <ArrowRight size={20} />
                             </motion.button>
                             <motion.button
@@ -47,7 +47,7 @@ export default function Hero() {
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 px-8 py-3.5 rounded-full font-bold text-base transition-all shadow-sm hover:shadow-md"
                             >
-                                List Your Service
+                                How it works
                             </motion.button>
                         </div>
 

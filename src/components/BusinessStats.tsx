@@ -38,26 +38,32 @@ export default function BusinessStats() {
                             For Businesses
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                            List your services in <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">GoMyTurn</span>
+                            Smarter queues for <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">modern businesses</span>
                         </h2>
                         <p className="text-gray-400 text-base md:text-lg mb-10 leading-relaxed">
-                            Join thousands of service providers who've transformed their queue management.
-                            Simple setup, powerful results.
+                            Serve customers better — without chaos. Manage appointments, walk-ins, and queues from one dashboard.
                         </p>
 
                         <ul className="space-y-4 mb-10">
-                            {features.map((feature, index) => (
+                            {[
+                                { title: "1. Register Organization", desc: "Create your profile in 2 mins." },
+                                { title: "2. Add Services", desc: "Set your schedule and slots." },
+                                { title: "3. Manage Queues", desc: "Live dashboard for checking in." }
+                            ].map((step, index) => (
                                 <motion.li
                                     key={index}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="flex items-center gap-3 text-gray-300"
+                                    className="flex flex-col gap-1 text-gray-300 mb-4"
                                 >
-                                    <CheckCircle2 className="text-emerald-400 flex-shrink-0" size={22} />
-                                    <span className="text-base">{feature}</span>
+                                    <div className="flex items-center gap-3">
+                                        <CheckCircle2 className="text-emerald-400 flex-shrink-0" size={22} />
+                                        <span className="text-lg font-bold">{step.title}</span>
+                                    </div>
+                                    <span className="text-gray-400 ml-9">{step.desc}</span>
                                 </motion.li>
                             ))}
                         </ul>

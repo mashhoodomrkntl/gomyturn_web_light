@@ -26,36 +26,45 @@ const allServices = [
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-slate-50/50">
             <Header />
-            <section className="pt-32 pb-20">
+            <section className="pt-40 pb-24 md:pt-48 md:pb-32 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-100/30 rounded-full blur-[120px] -z-10" />
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center max-w-3xl mx-auto mb-20"
+                        className="text-center max-w-3xl mx-auto mb-24"
                     >
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Services you need. When you need them.</h1>
-                        <p className="text-lg text-gray-600">
-                            Find verified providers with clear schedules. No guessing. Arrive exactly when it's your turn.
+                        <div className="inline-block px-4 py-1.5 rounded-xl bg-white shadow-premium border border-emerald-100 text-emerald-600 font-bold text-[10px] uppercase tracking-widest mb-8">
+                            Directory
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.05]">
+                            Services you need, <br />
+                            <span className="text-gradient">on your time.</span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed">
+                            Find verified providers with clear schedules. No more guessing. Book ahead and arrive exactly when it's your turn.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {allServices.map((service, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                whileHover={{ y: -5, scale: 1.02 }}
-                                className="group p-8 rounded-3xl border border-gray-100 bg-white hover:border-emerald-200 hover:shadow-xl transition-all text-center cursor-pointer"
+                                transition={{ delay: index * 0.05, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                whileHover={{ y: -10 }}
+                                className="group p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-premium hover:shadow-2xl hover:border-emerald-200 transition-all duration-500 text-center cursor-pointer"
                             >
-                                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center transition-transform group-hover:scale-110`}>
-                                    <service.icon size={32} />
+                                <div className={`w-20 h-20 mx-auto mb-8 rounded-[1.5rem] ${service.bg} ${service.color} flex items-center justify-center transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm shadow-slate-100`}>
+                                    <service.icon size={36} />
                                 </div>
-                                <h3 className="font-bold text-gray-900">{service.name}</h3>
+                                <h3 className="text-xl font-black text-slate-900 mb-2 tracking-tight group-hover:text-emerald-600 transition-colors">{service.name}</h3>
+                                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Available Now</p>
                             </motion.div>
                         ))}
                     </div>

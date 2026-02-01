@@ -36,76 +36,71 @@ const steps = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="py-24 md:py-32 bg-white relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/30 rounded-full blur-3xl" />
+        <section id="how-it-works" className="section-padding bg-slate-50/50 relative overflow-hidden">
+            {/* Decoration */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-100/20 rounded-full blur-[100px] -z-10" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div className="text-center max-w-3xl mx-auto mb-20 md:mb-28">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-5 py-2 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-700 font-semibold text-sm mb-6"
+                        className="inline-block px-4 py-1.5 rounded-xl bg-white shadow-premium border border-emerald-100 text-emerald-600 font-bold text-[10px] uppercase tracking-widest mb-6"
                     >
-                        How It Works
+                        Easy Setup
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+                        className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight"
                     >
-                        Skip the wait, <br />
-                        <span className="text-[var(--color-primary)]">not your turn</span>
+                        Reclaim your time in <br />
+                        <span className="text-gradient">four simple steps.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto"
+                        className="text-slate-500 text-lg font-medium leading-relaxed"
                     >
-                        Four simple steps to reclaim your time
+                        We've optimized every touchpoint to make sure your turn-taking experience is as smooth as possible.
                     </motion.p>
                 </div>
 
-                <div className="relative">
-                    {/* Connecting Line (Desktop) */}
-                    <div className="hidden lg:block absolute top-[3.5rem] left-0 w-full h-1 bg-gradient-to-r from-blue-200 via-emerald-200 via-amber-200 to-purple-200 -z-10 rounded-full" />
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 relative">
+                    {/* Connecting Arrows (Desktop) */}
+                    <div className="hidden lg:block absolute top-[28%] left-[10%] right-[10%] h-px bg-gradient-to-r from-emerald-100 via-emerald-200 to-emerald-100 -z-10" />
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-                        {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.15, duration: 0.6, type: "spring" }}
-                                className="relative text-center group"
-                            >
-                                <div className="relative inline-block mb-8">
-                                    <motion.div
-                                        whileHover={{ scale: 1.15, rotate: 10 }}
-                                        className={`w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br ${step.color} rounded-3xl shadow-2xl flex items-center justify-center text-white transition-all duration-300 relative`}
-                                    >
-                                        <div className="absolute inset-0 bg-white/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
-                                        <step.icon size={40} className="relative z-10" />
-                                    </motion.div>
-                                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gray-900 text-white font-bold flex items-center justify-center shadow-lg text-sm border-4 border-white">
+                    {steps.map((step, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative group bg-white p-10 rounded-[2.5rem] shadow-premium hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-slate-100/50 transition-all duration-500 hover:-translate-y-2"
+                        >
+                            <div className="relative z-10 mb-10">
+                                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} shadow-lg shadow-emerald-500/10 flex items-center justify-center text-white relative group-hover:rotate-6 transition-transform duration-500`}>
+                                    <step.icon size={36} />
+                                    <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-slate-900 text-white font-black flex items-center justify-center text-xs border-4 border-white shadow-lg">
                                         {step.number}
                                     </div>
                                 </div>
+                            </div>
 
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">
-                                    {step.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
+                            <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight leading-none group-hover:text-emerald-600 transition-colors">
+                                {step.title}
+                            </h3>
+                            <p className="text-slate-500 font-medium text-sm leading-relaxed">
+                                {step.description}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

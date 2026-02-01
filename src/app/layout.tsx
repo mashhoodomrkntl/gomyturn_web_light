@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
   title: "GoMyTurn - Smart Queue Management",
-  description: "Your Time Deserves Better. Turn-taking, simplified.",
+  description: "Reclaim your time. Professional queue management for modern services.",
 };
 
 export default function RootLayout({
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} antialiased`}
+        className={`${jakarta.variable} font-sans antialiased`}
       >
         {children}
       </body>

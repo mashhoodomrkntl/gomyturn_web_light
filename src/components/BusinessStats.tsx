@@ -20,91 +20,82 @@ const features = [
 
 export default function BusinessStats() {
     return (
-        <section className="py-24 md:py-32 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl" />
+        <section className="section-padding bg-slate-900 overflow-hidden relative">
+            {/* Massive Ambient Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-emerald-500/5 rounded-full blur-[150px] -z-10" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
                     {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
                     >
-                        <div className="inline-block px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold text-sm mb-8">
-                            For Businesses
+                        <div className="inline-block px-4 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold text-[10px] uppercase tracking-widest mb-8">
+                            For Organizations
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight">
                             Smarter queues for <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">modern businesses</span>
+                            <span className="text-emerald-400 text-gradient from-emerald-400 to-indigo-400">modern businesses.</span>
                         </h2>
-                        <p className="text-gray-400 text-base md:text-lg mb-10 leading-relaxed">
-                            Serve customers better — without chaos. Manage appointments, walk-ins, and queues from one dashboard.
+                        <p className="text-slate-400 text-lg font-medium mb-12 leading-relaxed">
+                            Serve customers better — without chaos. Manage appointments, walk-ins, and live queues from one beautiful dashboard.
                         </p>
 
-                        <ul className="space-y-4 mb-10">
+                        <div className="space-y-8 mb-12">
                             {[
                                 { title: "1. Register Organization", desc: "Create your profile in 2 mins." },
                                 { title: "2. Add Services", desc: "Set your schedule and slots." },
                                 { title: "3. Manage Queues", desc: "Live dashboard for checking in." }
                             ].map((step, index) => (
-                                <motion.li
+                                <motion.div
                                     key={index}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="flex flex-col gap-1 text-gray-300 mb-4"
+                                    className="flex gap-6 group"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <CheckCircle2 className="text-emerald-400 flex-shrink-0" size={22} />
-                                        <span className="text-lg font-bold">{step.title}</span>
+                                    <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all duration-500">
+                                        <CheckCircle2 className="text-emerald-500 group-hover:text-white" size={24} />
                                     </div>
-                                    <span className="text-gray-400 ml-9">{step.desc}</span>
-                                </motion.li>
+                                    <div className="space-y-1">
+                                        <h4 className="text-xl font-black text-white tracking-tight">{step.title}</h4>
+                                        <p className="text-slate-400 font-medium text-sm">{step.desc}</p>
+                                    </div>
+                                </motion.div>
                             ))}
-                        </ul>
+                        </div>
 
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-10 py-4 rounded-full font-bold text-base transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2"
+                            className="btn-primary"
                         >
-                            Register Your Business
-                            <ArrowRight size={20} />
+                            Register Your Business Now
                         </motion.button>
                     </motion.div>
 
                     {/* Right Stats Grid */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                        className="grid grid-cols-2 gap-6"
-                    >
+                    <div className="grid grid-cols-2 gap-6 md:gap-8">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
-                                whileHover={{ scale: 1.05, y: -5 }}
-                                className="relative group"
+                                transition={{ delay: 0.3 + index * 0.1, duration: 0.8 }}
+                                className="group relative"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100" />
-                                <div className="relative bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:border-emerald-500/30 transition-all cursor-pointer">
-                                    <stat.icon className="w-8 h-8 text-emerald-400 mb-4" />
-                                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                                <div className="p-10 rounded-[2.5rem] bg-slate-800/40 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-500 backdrop-blur-sm h-full">
+                                    <stat.icon className="w-10 h-10 text-emerald-400 mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500" />
+                                    <div className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tighter">{stat.value}</div>
+                                    <div className="text-slate-400 font-black uppercase text-[10px] tracking-widest">{stat.label}</div>
                                 </div>
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

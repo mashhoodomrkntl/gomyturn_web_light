@@ -2,104 +2,88 @@
 
 import { motion } from 'framer-motion';
 import { Mail, Phone, Send } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
+        <section id="contact" className="section-padding bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
                     {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
                     >
-                        <div className="inline-block px-5 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-semibold text-sm mb-8">
-                            Contact Us
+                        <div className="inline-block px-4 py-1.5 rounded-xl bg-white shadow-premium border border-emerald-100 text-emerald-600 font-bold text-[10px] uppercase tracking-widest mb-8">
+                            Get In Touch
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                            Ready to transform your <br />
-                            <span className="text-[var(--color-primary)]">queue experience?</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+                            Ready to <br />
+                            <span className="text-gradient">reclaim your time?</span>
                         </h2>
-                        <p className="text-gray-600 text-base md:text-lg mb-12 leading-relaxed">
-                            Have questions? We'd love to hear from you. Reach out and let's make waiting smarter together.
+                        <p className="text-slate-500 text-lg font-medium mb-12 leading-relaxed">
+                            Have questions about our smart queue management? Our team is here to help you get started.
                         </p>
 
-                        <div className="space-y-6">
-                            <motion.div
-                                whileHover={{ x: 5 }}
-                                className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 hover:shadow-lg transition-all"
-                            >
-                                <div className="w-14 h-14 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl flex items-center justify-center text-[var(--color-primary)] shrink-0">
-                                    <Mail size={26} />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-gray-500 mb-2 font-medium">Email us</p>
-                                    <a href="mailto:sofbudgroup@gmail.com" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
-                                        sofbudgroup@gmail.com
-                                    </a>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                whileHover={{ x: 5 }}
-                                className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 hover:shadow-lg transition-all"
-                            >
-                                <div className="w-14 h-14 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl flex items-center justify-center text-[var(--color-primary)] shrink-0">
-                                    <Phone size={26} />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-gray-500 mb-2 font-medium">WhatsApp</p>
-                                    <a href="https://wa.me/9145345" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
-                                        +91 45345
-                                    </a>
-                                </div>
-                            </motion.div>
+                        <div className="grid sm:grid-cols-2 gap-6">
+                            {[
+                                { icon: Mail, label: "Email us", value: "sofbudgroup@gmail.com", href: "mailto:sofbudgroup@gmail.com" },
+                                { icon: Phone, label: "WhatsApp", value: "+91 9453 45XXXX", href: "https://wa.me/91945345" }
+                            ].map((item, i) => (
+                                <Link
+                                    key={i}
+                                    href={item.href}
+                                    className="p-8 rounded-[2rem] bg-white shadow-premium border border-slate-100 hover:border-emerald-200 hover:shadow-2xl transition-all duration-500 group"
+                                >
+                                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                                        <item.icon size={24} />
+                                    </div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{item.label}</p>
+                                    <p className="font-bold text-slate-900 break-words">{item.value}</p>
+                                </Link>
+                            ))}
                         </div>
                     </motion.div>
 
                     {/* Right Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                        className="bg-white p-10 md:p-12 rounded-[2.5rem] shadow-2xl border border-gray-100"
+                        className="bg-white p-10 md:p-14 rounded-[3rem] shadow-premium border border-slate-100/50"
                     >
-                        <form className="space-y-6">
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Your Name</label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-[var(--color-primary)] focus:ring-0 focus:outline-none transition-all placeholder:text-gray-400 bg-gray-50 focus:bg-white"
-                                />
+                        <form className="space-y-8">
+                            <div className="grid sm:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Name</label>
+                                    <input
+                                        type="text"
+                                        className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all outline-none font-medium placeholder:text-slate-300"
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Email</label>
+                                    <input
+                                        type="email"
+                                        className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all outline-none font-medium placeholder:text-slate-300"
+                                        placeholder="john@example.com"
+                                    />
+                                </div>
                             </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Email Address</label>
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-[var(--color-primary)] focus:ring-0 focus:outline-none transition-all placeholder:text-gray-400 bg-gray-50 focus:bg-white"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Message</label>
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Message</label>
                                 <textarea
-                                    rows={5}
-                                    placeholder="How can we help you?"
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-[var(--color-primary)] focus:ring-0 focus:outline-none transition-all placeholder:text-gray-400 bg-gray-50 focus:bg-white resize-none"
+                                    rows={4}
+                                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all outline-none font-medium placeholder:text-slate-300 resize-none"
+                                    placeholder="How can we help?"
                                 />
                             </div>
-
                             <motion.button
-                                type="submit"
-                                whileHover={{ scale: 1.02 }}
+                                whileHover={{ scale: 1.02, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold py-4 rounded-xl transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2"
+                                className="w-full btn-primary flex items-center justify-center gap-3"
                             >
                                 <Send size={20} />
                                 Send Message

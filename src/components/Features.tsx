@@ -28,14 +28,16 @@ const features = [
 
 export default function Features() {
     return (
-        <section id="features" className="py-24 bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+        <section id="features" className="section-padding bg-slate-900 overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -z-10" />
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div className="text-center max-w-3xl mx-auto mb-20">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold text-sm mb-6"
+                        className="inline-block px-4 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold text-[10px] uppercase tracking-widest mb-6"
                     >
                         Why Choose Us
                     </motion.div>
@@ -43,45 +45,45 @@ export default function Features() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+                        className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight"
                     >
-                        Built for modern businesses
+                        Everything you need to <br />
+                        <span className="text-emerald-400">eliminate waiting.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto"
+                        className="text-slate-400 text-lg font-medium leading-relaxed"
                     >
-                        Everything you need to eliminate waiting and serve customers better
+                        Our platform is designed for businesses that value their customers' time and want to streamline operation.
                     </motion.p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: feature.delay, duration: 0.5 }}
-                            whileHover={{ y: -8, scale: 1.02 }}
-                            className="relative group"
+                            transition={{ delay: index * 0.1, duration: 0.8 }}
+                            whileHover={{ y: -10 }}
+                            className="group relative"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100" />
-                            <div className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-emerald-500/30 transition-all h-full">
+                            <div className="relative p-10 rounded-[2.5rem] bg-slate-800/50 border border-slate-700/50 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 h-full backdrop-blur-sm">
                                 <motion.div
-                                    whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="w-14 h-14 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20"
+                                    whileHover={{ rotate: 12, scale: 1.1 }}
+                                    className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 mb-8"
                                 >
-                                    <feature.icon size={28} />
+                                    <feature.icon size={30} />
                                 </motion.div>
-                                <h3 className="text-white font-bold text-lg leading-tight text-center">
+                                <h3 className="text-xl font-black text-white mb-4 tracking-tight leading-tight group-hover:text-emerald-400 transition-colors">
                                     {feature.title}
                                 </h3>
+                                <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                                    Maximize efficiency while providing an exceptional experience for your visitors.
+                                </p>
                             </div>
                         </motion.div>
                     ))}

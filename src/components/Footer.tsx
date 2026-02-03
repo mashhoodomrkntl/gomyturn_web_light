@@ -18,7 +18,7 @@ export default function Footer() {
                         </p>
                         <div className="text-sm space-y-2">
                             <p>Email: sofbudgroup@gmail.com</p>
-                            <p>WhatsApp: +91 9453 45XXXX</p>
+                            <p>WhatsApp: +91 94537 45XXXX</p>
                         </div>
                     </div>
 
